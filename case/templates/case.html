@@ -1,0 +1,106 @@
+{% extends 'aromaapp/base.html' %}
+
+{% load static %}
+{% block css_files %} {% endblock %}
+
+{% block js_files %}  {% endblock  %}
+<title>{% block page_title %}Kasa İşlemleri{% endblock  %}</title>
+
+
+{% block content %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGER</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="navbar-brand " href="{% url 'home' %}" >Hoşgeldin,<strong>{{user.username}}</strong></a>
+                </li> 
+                <li class="nav-item">
+                <a class="navbar-brand" href="{% url 'logout_request' %}">Logout</a>
+                </li>   
+                {% endif %}
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{% url 'login_request' %}">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+      </nav><br><br>
+      <br>
+      <br>
+      <div style=" margin-left: 20px; float:left;">
+        <a href="{% url 'addFromBank' %}"> <img style="width:80px" src="{% static 'img/+icon.png' %}" alt=""> </a>
+        <p class="write ">Bankadan Geleni Ekle</p>
+        <a href="{% url 'addDebt' %}"> <img style="width:80px"  src="{% static 'img/+icon.png' %}" alt=""> </a>
+        <p class="write ">Müşteriye Verileni Ekle</p>
+        
+        
+        
+    </div>
+
+      <div class="container text-center">
+        
+        
+
+          <div class="col-md-12 d-md-flex justify-content-md-between"  style="margin-left: 80px;" >
+
+          <div class="menu">
+            <a href="{% url 'home' %}"> <img src="{% static 'img/home.png' %}" alt=""> </a>
+            <p class="write">Anasayfa</p>
+          </div>
+          
+          <div class="menu">
+            
+              <a href="{% url 'bankSee' %}"> <img src="{% static 'img/bank.png' %}" alt=""> </a>
+              <p class="write "> Bankadan Gelen Para Çizelgesi</p>
+           
+          </div>
+
+          
+
+          <div class="menu">
+           
+              <a href="{% url 'debtSee' %}"> <img src="{% static 'img/hand.png' %}" alt=""> </a>
+              <p class="write ">Müşteriye Verilen Para Çizelgesi</p>
+          </div>
+
+
+          
+      </div>
+
+
+
+        
+
+         
+
+
+
+  </div>
+  
+
+      <footer> Telif Hakkı @ Gürkan Eser'e Aittir.</footer>
+      {% endblock %}
+    
+      
+
+
+
+
+    
+
+
+
+
+
+
+
+

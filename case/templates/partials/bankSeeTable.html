@@ -1,0 +1,20 @@
+{% load static %}
+<h1>Bankadan Gelen Para Tablosu:</h1>
+<h3>Şirket ismi : Gürkan Eser</h3>
+{% for bank in banks %}
+     
+     <tbody>
+          
+          <tr> 
+          
+          <td>{{bank.id}}</td>
+          <td>{{bank.bankName}}</td>
+          <td>{{bank.ıban}}</td>
+          <td>{{bank.title}}</td>
+          <td>{{bank.price}}</td>
+          <td>{{bank.transactionDate}}</td>
+          <td>{{bank.description}}</td>
+          
+          </tr>
+     </tbody>
+{% endfor %}

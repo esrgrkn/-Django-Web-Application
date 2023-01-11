@@ -1,0 +1,20 @@
+{% load static %}
+<h1>Müşteriye Verilen borç Tablosu</h1>
+<h3>Şirket ismi : Gürkan Eser</h3>
+{% for debt in debtss %}
+     
+     <tbody>
+          
+          <tr> 
+          
+          <td>{{debt.id}}</td>
+          <td>{{debt.namesurname}}</td>
+          <td>{{debt.price}}</td>
+          <td>{{debt.debtType}}</td>
+          <td>{{debt.description}}</td>
+          <td>{{debt.date}}</td>
+          
+          
+          </tr>
+     </tbody>
+{% endfor %}

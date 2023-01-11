@@ -1,0 +1,166 @@
+{% extends 'aromaapp/base.html' %}
+
+{% load static %}
+{% block css_files %} {% endblock %}
+
+{% block js_files %}  {% endblock  %}
+<title>{% block page_title %}Borç{% endblock  %}</title>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+{% block content %}
+    
+    <!-- Page Loader -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"  style="overflow: hidden; ">
+     
+       
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		   <li class="nav-item active">
+			  <a class="navbar-brand " href="{% url 'home' %}">Anasayfa</a>
+		   </li> 
+		   <li class="nav-item">
+		   <a class="navbar-brand" href="{% url 'case' %}">Kasa İşlemleri</a>
+		   </li>   
+		   <li class="nav-item">
+			<a class="navbar-brand" href="{% url 'addFromBank' %}">Bankadan Geleni Ekle</a>
+		   </li>
+		   <li class="nav-item">
+		   <a class="navbar-brand" href="{% url 'bankSee' %}">Bankadan Gelen Para Çizelgesi</a>
+		   </li>
+		   <li class="nav-item">
+			<a class="navbar-brand" href="{% url 'addDebt' %}">Müşteriye Verileni Ekle</a>
+		   </li>
+		   <li class="nav-item">
+			<a class="navbar-brand"href="{% url 'debtSee' %}">Müşteriye Verilen Para Çizelgesi</a>
+		   </li>
+		   <li class="nav-item">
+			<a class="navbar-brand" href="contact.html">Özel Kasa</a>
+		   </li>
+		   
+		   
+	    </ul>
+	</div>
+   </nav> 
+
+    
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        
+        
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="{% static 'img/kişiekle.png' %}" alt="IMG">
+			</div>
+
+			<form method="POST"class="contact1-form validate-form">
+                    {% csrf_token %}
+				
+				{% if error %}
+					<div class="alert alert-warning">{{error}}
+				{% endif %}
+					
+				<span class="contact1-form-title">
+					Müşteriye Verilen Parayı Ekleyin
+				</span>
+                    
+				<div name="namesurname" class="wrap-input1 validate-input" data-validate = "Name is required">
+					<input class="input1" type="text" name="namesurname" placeholder="Borç verilen Müşterinin Adı Soyadı.">
+					<span class="shadow-input1"></span>
+				</div>
+
+                    <div name="price" class="wrap-input1 validate-input">
+					<input class="input1" type="number" name="price" placeholder="Borç verilen Miktar.">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div name="debtType" class="wrap-input1 validate-input" >
+					<input class="input1" type="text" name="debtType" placeholder="Borç Türü">
+					<span class="shadow-input1"></span>
+				</div>
+                    <div name="description" class="wrap-input1 validate-input" >
+					<input class="input1" type="text" name="description" placeholder="Açıklama">
+					<span class="shadow-input1"></span>
+				</div>
+				<div class="container-contact1-form-btn">
+					<button value="submit" class="contact1-form-btn">
+						<span>
+							Kayıt et !
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                   
+						</span>
+					</button>
+					<input style="border-radius:30px;width:80px;margin-left:20px;background-color:#3abc2a;color:white;font-weight:bold" type="reset">
+
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+
+
+        
+     
+	<footer style="width: 100%;height: 65px;background-color:white;text-align: center;line-height: 75px;color:black;font-weight: bolder;position: fixed;bottom: 0;"> Telif Hakkı @ Gürkan Eser'e Aittir.</footer>
+    
+{% endblock  %}  
+    
+    
