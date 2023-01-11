@@ -1,0 +1,20 @@
+{% load static %}
+
+{% for blog in blogs %}
+
+     <tbody>
+          
+          <tr> 
+          <td>{{blog.id}}</td>
+          <td><strong>{{blog.namesurname}}</strong></td>
+          <td>{{blog.adet}}</td>
+          <td>{{blog.daralı}}</td>
+          <td>{{blog.safi}}</td>
+          <td>{{blog.tutar }}₺</td>
+          <td>{{blog.date }}</td>
+          <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>     
+          <td><a href="{% url 'deleteEdit' blog.id %}">SİL</a></td>
+          <td><a href="{% url 'paid' blog.id %}">öde</a></td>
+     </tr>
+     </tbody>
+{% endfor %}

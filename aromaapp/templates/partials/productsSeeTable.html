@@ -1,0 +1,26 @@
+{% load static %}
+
+
+{% for product in products %}  
+     <tbody>
+          
+          <tr>
+          
+          <td>{{product.id}}</td>
+          <td><strong>{{product.namesurname}}</strong></td>
+          <td>{{product.adet}}</td>
+          <td>{{product.daralı}}</td>
+          <td>{{product.safi}}</td>
+          <td>{{product.tutar }}₺</td>
+          <td>{{product.date }} <a method="POST" href="{% url 'dateFilter' product.date %}">TARİHİ FİLTRELE</a></td>
+          <td><a href="{% url 'deleteEdit' product.id %}">SİL</a></td>
+          
+          <td><a method="POST" href="{% url 'personFilter' product.slug %}">GÖRÜNTÜLE</a></td>
+          
+
+
+          </tr>
+     </tbody>
+     {% endfor %}  
+       
+    

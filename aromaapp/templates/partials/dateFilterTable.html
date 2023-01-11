@@ -1,0 +1,28 @@
+{% load static %}
+<h1>Filtrelenmiş Tarihte Ürünler</h1>
+<h3>Şirket ismi : Gürkan Eser</h3>
+
+{% for day in days %}  
+     <tbody>
+          
+          <tr>
+          
+          <td>{{day.id}}</td>
+          <td><strong>{{day.namesurname}}</strong></td>
+          <td>{{day.adet}}</td>
+          <td>{{day.daralı}}</td>
+          <td>{{day.safi}}</td>
+          <td>{{day.tutar }}₺</td>
+          <td>{{day.date }}</td>
+          <td><a method="POST" href="{% url 'personFilter' day.slug %}">GÖRÜNTÜLE</a></td>
+          
+      
+
+           
+          
+          
+      
+          
+          </tr>
+     </tbody>
+     {% endfor %}

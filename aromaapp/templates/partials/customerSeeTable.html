@@ -1,0 +1,24 @@
+{% load static %}
+<h1>Müşteri Tablosu:</h1>
+
+{% for customer in customers %}
+
+
+     
+     <tbody>
+          
+          <tr> 
+              
+          <td>{{customer.id}}</td>
+          <td><strong>{{customer.namesurname}}</strong></td>
+          <td>{{customer.tc}}</td>
+          <td>{{customer.phoneNum}}</td>
+          <td>{{customer.date}}</td>
+          <td><a href="{% url 'customerEdit' customer.id %}">DÜZENLE</a></td>
+          <td><a href="{% url 'customerdeleteEdit' customer.id %}">SİL</a></td>   
+
+          
+          
+          </tr>
+     </tbody>
+{% endfor %}

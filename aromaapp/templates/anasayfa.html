@@ -1,0 +1,141 @@
+{% extends 'aromaapp/base.html' %}
+
+{% load static %}
+{% block css_files %} {% endblock %}
+
+{% block js_files %}  {% endblock  %}
+<title>{% block page_title %}Anasayfa{% endblock  %}</title>
+
+
+{% block content %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    
+    
+
+
+  
+    
+     
+
+    <nav style="font-weight:bold;" class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item active">
+                    <a style="font-weight:bold;font-size:20px" class="navbar-brand " href="{% url 'home' %}" >Hoşgeldin,<strong>{{user.username}}</strong></a>
+                </li> 
+                <li class="nav-item">
+                <a style="font-weight:bold;font-size:20px" class="navbar-brand" href="{% url 'logout_request' %}">Logout</a>
+                </li>   
+                {% endif %}
+                <li class="nav-item active">
+                    <a style="font-weight:bold;font-size:20px" class="navbar-brand" href="{% url 'login_request' %}">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+      </nav> 
+      {% if error %}
+      <div class="alert alert-warning">{{error}}
+  {% endif %}
+
+      <div class="container text-center">
+
+        
+
+          <div class="col-md-12 d-md-flex justify-content-md-between ">
+            
+          <div class="menu">
+            <a href="{% url 'custsomerAdd' %}"> <img src="{% static 'img/user-app.png' %}" alt=""> </a>
+            <p class="write">Müşteri Ekle</p>
+          </div>
+
+          <div class="menu">
+            
+              <a href="{% url 'productsAdd' %}"> <img src="{% static 'img/productadd.png' %}" alt=""> </a>
+              <p class="write ">Ürün Ekle</p>
+           
+          </div>
+
+
+          <div class="menu">
+           
+            <a href="{% url 'dailyTable' %}"> <img src="{% static 'img/cells.png' %}" alt=""> </a>
+            <p class="write ">Günlük Tablo</p>
+          
+        </div>
+
+
+          <div class="menu">
+           
+              <a href="#"> <img src="{% static 'img/hand.png' %}" alt=""> </a>
+              <p class="write ">Ödeme Çizelgesi</p>
+          </div>
+
+      </div>
+
+
+
+        
+
+          <div class="col-md-12 d-md-flex justify-content-md-between ">
+          <div class="menu">
+            <a href="{% url 'custsomerSee' %}"> <img src="{% static 'img/table.png' %}" alt=""> </a>
+            <p class="write ">Müşterileri Gör</p>
+          </div>
+          <br>
+          <div class="menu">
+              <a href="{% url 'productsSee' %}"> <img src="{% static 'img/table.png' %}" alt=""> </a>
+              <p class="write ">Ürünleri Gör</p>
+           
+          </div>
+
+          
+          <div class="menu">
+           
+            <a href="{% url 'case' %}"> <img src="{% static 'img/cash-register.png' %}" alt=""> </a>
+            <p class="write ">Kasa İşlemleri</p>
+          
+        </div>
+          
+
+          <div class="menu">
+           
+              <a href="{% url 'settings' %}"> <img src="{% static 'img/settings.png' %}" alt=""> </a>
+              <p class="write ">Ayarlar</p>
+          </div>
+
+      </div>
+
+
+
+
+
+  </div>
+  
+
+      <footer> Telif Hakkı @ Gürkan Eser'e Aittir.</footer>
+      
+      
+    
+      {% endblock %}
+    
+     
+
+
+    
+
+
+
+
+
+
+
+

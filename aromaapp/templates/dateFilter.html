@@ -1,0 +1,53 @@
+{% extends 'aromaapp/base.html' %}
+
+{% load static %}
+{% block css_files %} {% endblock %}
+
+{% block js_files %}  {% endblock  %}
+<title>{% block page_title %}Filtrelenmiş Tarihler{% endblock  %}</title>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+{% block content %}
+    
+    <!-- Page Loader -->
+    
+    <div style="text-align:center;text-align:justify;margin-left: 20%;" class="container">
+        {% include 'partials/navbarPages.html' %}
+    </div>
+      
+    
+    
+
+	
+
+	
+    <div class="container-fluid tm-container-content tm-mt-60">
+       
+	<table class="table table-hover">
+        
+		<thead>
+               <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">AD SOYAD</th>
+                    <th scope="col">ADET</th>
+                    <th scope="col">DARALI</th>
+                    <th scope="col">SAFİ</th>
+                    <th scope="col">TUTAR </th>
+                    <th scope="col">TARİH(AY/GÜN/YIL)</th>
+                    <th scope="col">İŞLEMLER</th>
+                
+          </thead>
+	{% include 'partials/dateFilterTable.html' %}
+     </table>
+    </div>
+   
+  
+    <footer style="width: 100%;height: 65px;background-color:white;text-align: center;line-height: 75px;color:black;font-weight: bolder;position: fixed;bottom: 0;"> Telif Hakkı @ Gürkan Eser'e Aittir.</footer>
+{% endblock  %}  
+    
+    

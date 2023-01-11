@@ -1,0 +1,35 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light"  style="overflow: hidden;width:100% ">
+     
+       
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		   <li class="nav-item active">
+			  <a class="navbar-brand "  href="{% url 'home' %}">Anasayfa</a>
+		   </li> 
+		   <li class="nav-item">
+		   <a class="navbar-brand" href="{% url 'case' %}">Kasa İşlemleri</a>
+		   </li>   
+		   <li class="nav-item">
+			<a class="navbar-brand"  href="{% url 'custsomerAdd' %}">Müşteri Ekle</a>
+		   </li>
+		   <li class="nav-item">
+		   <a class="navbar-brand"href="{% url 'custsomerSee' %}">Müşterileri Gör</a>
+		   </li>
+		   <li class="nav-item">
+			<a class="navbar-brand" href="{% url 'productsAdd' %}">Ürün Ekle</a>
+		   </li>
+		   <li class="nav-item">
+			<a class="navbar-brand"href="{% url 'productsSee' %}">Ürünleri Gör</a>
+		   </li>
+		   
+
+           
+
+		   
+		   
+	    </ul>
+	</div>
+   </nav> 
+
+
