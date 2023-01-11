@@ -22,5 +22,5 @@ Projeye Ait Görseller ;
 <img width="1280" alt="Ekran görüntüsü 2023-01-11 153134" src="https://user-images.githubusercontent.com/92585904/211894999-50ac659a-32f0-4f4e-a7e2-f649a4d75292.png">
 <img width="1280" alt="Ekran görüntüsü 2023-01-11 153149" src="https://user-images.githubusercontent.com/92585904/211895005-6e4f4b49-94bf-42f9-a951-7217c4c85cb9.png">
 <img width="1280" alt="Ekran görüntüsü 2023-01-11 153204" src="https://user-images.githubusercontent.com/92585904/211895015-eef26956-7c79-4645-b8d7-cc02a947f502.png">
-<img width="868" alt="Ekran görüntüsü 2023-01-11 153225" src="https://user-images.githubusercontent.com/92585904/211895020-b02a351a-e43f-4dc0-81a6-fc3e1580880e.png">
+
 <img width="863" alt="Ekran görüntüsü <img width="1280"  src="https://user-images.githubusercontent.com/92585904/211895091-1254421e-674a-4539-adde-abbdcbc33801.png">
